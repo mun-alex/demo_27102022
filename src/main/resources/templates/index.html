@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,40 +35,56 @@
         </div>
     </nav>
     <div class="row mt-5 align-items-end">
-        <div class="col-lg-3">
-            <img src="img/img_mag.png" alt="MAGAZINE" width="100%">
-            <a href="#" class="btn btn-success mt-2">open for read</a>
-        </div>
-        <div class="col-lg-3">
-            <img src="img/img_mag2.jpg" alt="MAGAZINE" width="100%">
-            <a href="#" class="btn btn-success mt-2">open for read</a>
-        </div>
-        <div class="col-lg-3">
-            <img src="img/img_mag3.jpg" alt="MAGAZINE" width="100%">
-            <a href="#" class="btn btn-success mt-2">open for read</a>
-        </div>
-        <div class="col-lg-3">
-            <img src="img/img_mag4.jpg" alt="MAGAZINE" width="100%">
-            <a href="#" class="btn btn-success mt-2">open for read</a>
-        </div>
-    </div>
-    <div class="row mt-5 align-items-end">
-        <div class="col-lg-3">
-            <img src="img/img_mag2.jpg" alt="MAGAZINE" width="100%">
-            <a href="#" class="btn btn-success mt-2">open for read</a>
-        </div>
-        <div class="col-lg-3">
-            <img src="img/img_mag3.jpg" alt="MAGAZINE" width="100%">
-            <a href="#" class="btn btn-success mt-2">open for read</a>
-        </div>
-        <div class="col-lg-3">
-            <img src="img/img_mag4.jpg" alt="MAGAZINE" width="100%">
-            <a href="#" class="btn btn-success mt-2">open for read</a>
-        </div>
-        <div class="col-lg-3">
-            <img src="img/img_mag.png" alt="MAGAZINE" width="100%">
-            <a href="#" class="btn btn-success mt-2">open for read</a>
-        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="magazine : ${magazineList}">
+                <td th:text="${magazine.getId()}"></td>
+                <td th:text="${magazine.getName()}"></td>
+                <td th:text="${magazine.getDescription()}"></td>
+            </tr>
+            </tbody>
+        </table>
+<!--        <div class="col-lg-3">-->
+<!--            <img src="img/img_mag.png" alt="MAGAZINE" width="100%">-->
+<!--            <a href="#" class="btn btn-success mt-2">open for read</a>-->
+<!--        </div>-->
+<!--        <div class="col-lg-3">-->
+<!--            <img src="img/img_mag2.jpg" alt="MAGAZINE" width="100%">-->
+<!--            <a href="#" class="btn btn-success mt-2">open for read</a>-->
+<!--        </div>-->
+<!--        <div class="col-lg-3">-->
+<!--            <img src="img/img_mag3.jpg" alt="MAGAZINE" width="100%">-->
+<!--            <a href="#" class="btn btn-success mt-2">open for read</a>-->
+<!--        </div>-->
+<!--        <div class="col-lg-3">-->
+<!--            <img src="img/img_mag4.jpg" alt="MAGAZINE" width="100%">-->
+<!--            <a href="#" class="btn btn-success mt-2">open for read</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row mt-5 align-items-end">-->
+<!--        <div class="col-lg-3">-->
+<!--            <img src="img/img_mag2.jpg" alt="MAGAZINE" width="100%">-->
+<!--            <a href="#" class="btn btn-success mt-2">open for read</a>-->
+<!--        </div>-->
+<!--        <div class="col-lg-3">-->
+<!--            <img src="img/img_mag3.jpg" alt="MAGAZINE" width="100%">-->
+<!--            <a href="#" class="btn btn-success mt-2">open for read</a>-->
+<!--        </div>-->
+<!--        <div class="col-lg-3">-->
+<!--            <img src="img/img_mag4.jpg" alt="MAGAZINE" width="100%">-->
+<!--            <a href="#" class="btn btn-success mt-2">open for read</a>-->
+<!--        </div>-->
+<!--        <div class="col-lg-3">-->
+<!--            <img src="img/img_mag.png" alt="MAGAZINE" width="100%">-->
+<!--            <a href="#" class="btn btn-success mt-2">open for read</a>-->
+<!--        </div>-->
     </div>
     <footer class="mt-5">
         <div class="row">
