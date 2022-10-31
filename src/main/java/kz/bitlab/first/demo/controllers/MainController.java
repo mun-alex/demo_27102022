@@ -17,4 +17,9 @@ public class MainController {
         model.addAttribute("magazineList", allMagazines);
         return "index";
     }
+
+    @GetMapping(value = "/magazines")
+    String getMagazines() {
+        return "magazines";
+    }
 }
