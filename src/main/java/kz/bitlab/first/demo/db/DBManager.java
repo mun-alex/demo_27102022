@@ -15,7 +15,7 @@ public class DBManager {
         magazineList.add(new Magazine(3L, "IT-Magazine-4", "description"));
     }
 
-    static Long id = 3L;
+    static Long id = 4L;
 
     public static List<Magazine> getMagazineList() {
         return magazineList;
